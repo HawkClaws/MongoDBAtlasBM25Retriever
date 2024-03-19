@@ -59,7 +59,7 @@ class MongoDBAtlasBM25Retriever(BaseRetriever):
         pipeline = [
             {
                 "$search": {
-                    "index": f"index_{self._collection.name}",
+                    "index": self._index_name,
                     "text": {"query": query, "path": self._text_key},
                 }
             },
